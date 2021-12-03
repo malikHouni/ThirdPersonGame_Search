@@ -1,23 +1,15 @@
 import streamlit as st
-
-
-# for converting the parsed data in a
-# pandas dataframe
 import pandas as pd
-
+import numpy as np
 
 df = pd.read_csv("./tpsList.csv")
 df= df.drop(['Unnamed: 0'],axis=1)
-
 df['Platform(s)']=df['Platform(s)'].str.split(',')
-
-st.header("Find the Third-Person-Shooter by platform:")
 
 listPlatforms=[]
 for elem in df['Platform(s)']:
-    for item in elem:
-        listPlatforms.append(item)
-len(listPlatforms)
+    for item in range(len(elem)):
+        listPlatforms.append(np.array(elem)[item])
 stripList=[]
 for item in listPlatforms:
     stripList.append(item.strip())
