@@ -15,7 +15,7 @@ for item in listPlatforms:
     stripList.append(item.strip())
 len(stripList)
 finalPlatformList = set(stripList)
-
+st.header("Find the Third-Person-Shooter by platform:")
 choosenPlatform = st.selectbox("Platform: ",finalPlatformList)
 #choosenPlatform = st.text_input("give a platform name(ex:Wii,Win,...")
 choosenPlatform2= " "+choosenPlatform
